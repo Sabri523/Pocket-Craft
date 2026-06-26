@@ -246,12 +246,19 @@ static int play_player_position_and_look(int sock, struct ClientInformation* use
     int idx = 0;
 
     body[idx++] = 0x34;
+
+    uint64_t x_bits; memcpy(&x_bits, &user->x, 8);
+    x_bits = __builtin_bswap64(x_bits);
     memcpy(body+idx, &user->x, sizeof(user->x)); 
     idx += sizeof(user->x);
 
-    memcpy(body+idx, &user->y, sizeof(user->y)); 
+    uint64_t y_bits; memcpy(&y_bits, &user->y, 8);
+    y_bits = __builtin_bswap64(y_bits);
+    memcpy(body+idx, &y_bits, sizeof(user->y)); 
     idx += sizeof(user->y);
 
+    uint64_t z_bits; memcpy(&z_bits, &user->z, 8);
+    z_bits = __builtin_bswap64(z_bits);
     memcpy(body+idx, &user->z, sizeof(user->z)); 
     idx += sizeof(user->z);
 
