@@ -236,7 +236,7 @@ static int play_join_game(int sock, struct ClientInformation* user) {
 
 static int play_player_position_and_look(int sock, struct ClientInformation* user){
     user->x = 0;
-    user->y = 4;
+    user->y = 20;
     user->z = 0;
     user->yaw = 0;
     user->pitch = 0;
