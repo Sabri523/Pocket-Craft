@@ -1,0 +1,22 @@
+Command: ninja all
+[1/9] Performing build step for 'bootloader'
+[1/1] C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Sabri\Desktop\mc-server-idf\build\bootloader && C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe D:/Others/esp/.espressif/v6.0.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 bootloader 0x0 C:/Users/Sabri/Desktop/mc-server-idf/build/bootloader/bootloader.bin"
+Bootloader binary size 0x5240 bytes. 0x2dc0 bytes (36%) free.
+[2/9] No install step for 'bootloader'
+[3/9] Completed 'bootloader'
+[4/9] Building C object esp-idf/main/CMakeFiles/__idf_main.dir/mc_protocol.c.obj
+C:/Users/Sabri/Desktop/mc-server-idf/main/mc_protocol.c: In function 'send_chunk':
+C:/Users/Sabri/Desktop/mc-server-idf/main/mc_protocol.c:408:14: warning: unused variable 'hm_val' [-Wunused-variable]
+  408 |     uint64_t hm_val = 0;
+      |              ^~~~~~
+[5/9] Linking C static library esp-idf\main\libmain.a
+[6/9] Generating esp-idf/esp_system/ld/sections.ld
+[7/9] Linking CXX executable mc_status_server.elf
+[8/9] Generating binary image from built executable
+esptool v5.3.0
+Creating ESP32-S3 image...
+Merged 3 ELF sections.
+Successfully created ESP32-S3 image.
+Generated C:/Users/Sabri/Desktop/mc-server-idf/build/mc_status_server.bin
+[9/9] C:\Windows\system32\cmd.exe /C "cd /D C:\Users\Sabri\Desktop\mc-server-idf\build && C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe D:/Others/esp/.espressif/v6.0.1/esp-idf/components/partition_table/check_sizes.py --offset 0x8000 partition --type app C:/Users/Sabri/Desktop/mc-server-idf/build/partition_table/partition-table.bin C:/Users/Sabri/Desktop/mc-server-idf/build/mc_status_server.bin"
+mc_status_server.bin binary size 0xbc910 bytes. Smallest app partition is 0x100000 bytes. 0x436f0 bytes (26%) free.

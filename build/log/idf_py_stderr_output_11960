@@ -1,0 +1,20 @@
+Command: C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe D:\Others\esp\.espressif\v6.0.1\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\Sabri\Desktop\mc-server-idf\build\mc_status_server.elf C:\Users\Sabri\Desktop\mc-server-idf\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe' 'D:\Others\esp\.espressif\v6.0.1\esp-idf\tools\idf.py'
+[0;33m--- Warning: GDB cannot open serial ports accessed as COMx[0m
+[0;33m--- Using \\.\COM4 instead...[0m
+[0;33m--- esp-idf-monitor 1.9.0 on \\.\COM4 115200[0m
+[0;33m--- Quit: Ctrl+] | Menu: Ctrl+T | Help: Ctrl+T followed by Ctrl+H[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Others/esp/.espressif/v6.0.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m--- 0x40056f7b: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f5c: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f72: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x40056f78: [0;33mmemcpy[0m[0m in [0;32mROM[0m
+[0m--- 0x4200e745: [0;33mplay_join_game[0m[0m at [0;32mC:/Users/Sabri/Desktop/mc-server-idf/main/mc_protocol.c[0m[0m:[1;31m175[0m
+[0m--- 0x4200e917: [0;33mhandle_login_state[0m[0m at [0;32mC:/Users/Sabri/Desktop/mc-server-idf/main/mc_protocol.c[0m[0m:[1;31m237[0m
+[0m--- 0x4200ea2e: [0;33mmc_handle_connection[0m[0m at [0;32mC:/Users/Sabri/Desktop/mc-server-idf/main/mc_protocol.c[0m[0m:[1;31m285[0m
+[0m--- 0x4200df21: [0;33mclient_task[0m[0m at [0;32mC:/Users/Sabri/Desktop/mc-server-idf/main/main.c[0m[0m:[1;31m19[0m
+[0m--- 0x42085d5e: [0;33mvPortTaskWrapper[0m[0m at [0;32mD:/Others/esp/.espressif/v6.0.1/esp-idf/components/freertos/FreeRTOS-Kernel/portable/xtensa/port.c[0m[0m:[1;31m143[0m
+[0m--- 0x4037b2e6: [0;33mesp_cpu_wait_for_intr[0m[0m at [0;32mD:/Others/esp/.espressif/v6.0.1/esp-idf/components/esp_hw_support/cpu.c[0m[0m:[1;31m64[0m
+[0m--- 0x403c8700: [0;33m_stext[0m[0m at [0;32m??[0m[0m:[1;31m?[0m
+[0m--- 0x403c8908: [0;33mcall_start_cpu0[0m[0m at [0;32mD:/Others/esp/.espressif/v6.0.1/esp-idf/components/bootloader/subproject/main/bootloader_start.c[0m[0m:[1;31m27[0m
+[0m
