@@ -1,0 +1,629 @@
+Command: C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe D:\Others\esp\.espressif\v6.0.1\esp-idf\tools/idf_monitor.py -p COM4 -b 115200 --toolchain-prefix xtensa-esp32s3-elf- --target esp32s3 --revision 0 C:\Users\Sabri\Desktop\mc-server-idf\build\mc_status_server.elf C:\Users\Sabri\Desktop\mc-server-idf\build\bootloader\bootloader.elf --force-color -m 'C:\Espressif\tools\python\v6.0.1\venv\Scripts\python.exe' 'D:\Others\esp\.espressif\v6.0.1\esp-idf\tools\idf.py'
+ESP-ROM:esp32s3-20210327
+Build:Mar 27 2021
+rst:0x1 (POWERON),boot:0x8 (SPI_FAST_FLASH_BOOT)
+SPIWP:0xee
+mode:DIO, clock div:1
+load:0x3fce2820,len:0x14f0
+load:0x403c8700,len:0xda0
+load:0x403cb700,len:0x2f58
+entry 0x403c8908
+[0;32mI (24) boot: ESP-IDF v6.0.1 2nd stage bootloader[0m
+[0;32mI (25) boot: compile time Jun 20 2026 15:43:45[0m
+[0;32mI (25) boot: Multicore bootloader[0m
+[0;32mI (25) boot: chip revision: v0.2[0m
+[0;32mI (28) boot: efuse block revision: v1.4[0m
+[0;32mI (31) boot.esp32s3: Boot SPI Speed : 80MHz[0m
+[0;32mI (35) boot.esp32s3: SPI Mode       : DIO[0m
+[0;32mI (39) boot.esp32s3: SPI Flash Size : 2MB[0m
+[0;32mI (43) boot: Enabling RNG early entropy source...[0m
+[0;32mI (47) boot: Partition Table:[0m
+[0;32mI (50) boot: ## Label            Usage          Type ST Offset   Length[0m
+[0;32mI (56) boot:  0 nvs              WiFi data        01 02 00009000 00006000[0m
+[0;32mI (63) boot:  1 phy_init         RF data          01 01 0000f000 00001000[0m
+[0;32mI (69) boot:  2 factory          factory app      00 00 00010000 00100000[0m
+[0;32mI (76) boot: End of partition table[0m
+[0;32mI (79) esp_image: segment 0: paddr=00010020 vaddr=3c090020 size=1b398h (111512) map[0m
+[0;32mI (106) esp_image: segment 1: paddr=0002b3c0 vaddr=3fc97800 size=04c58h ( 19544) load[0m
+[0;32mI (111) esp_image: segment 2: paddr=00030020 vaddr=42000020 size=88d10h (560400) map[0m
+[0;32mI (211) esp_image: segment 3: paddr=000b8d38 vaddr=3fc9c458 size=003f8h (  1016) load[0m
+[0;32mI (212) esp_image: segment 4: paddr=000b9138 vaddr=40374000 size=137b0h ( 79792) load[0m
+[0;32mI (233) esp_image: segment 5: paddr=000cc8f0 vaddr=50000000 size=00024h (    36) load[0m
+[0;32mI (242) boot: Loaded app from partition at offset 0x10000[0m
+[0;32mI (242) boot: Disabling RNG early entropy source...[0m
+[0;32mI (252) cpu_start: Multicore app[0m
+[0;32mI (260) cpu_start: GPIO 44 and 43 are used as console UART I/O pins[0m
+[0;32mI (261) cpu_start: Pro cpu start user code[0m
+[0;32mI (261) cpu_start: cpu freq: 160000000 Hz[0m
+[0;32mI (263) app_init: Application information:[0m
+[0;32mI (266) app_init: Project name:     mc_status_server[0m
+[0;32mI (271) app_init: App version:      1[0m
+[0;32mI (275) app_init: Compile time:     Jun 20 2026 15:41:51[0m
+[0;32mI (280) app_init: ELF file SHA256:  05c387673...[0m
+[0;32mI (284) app_init: ESP-IDF:          v6.0.1[0m
+[0;32mI (288) efuse_init: Min chip rev:     v0.0[0m
+[0;32mI (292) efuse_init: Max chip rev:     v0.99 [0m
+[0;32mI (296) efuse_init: Chip rev:         v0.2[0m
+[0;32mI (299) heap_init: Initializing. RAM available for dynamic allocation:[0m
+[0;32mI (306) heap_init: At 3FCA0640 len 000490D0 (292 KiB): RAM[0m
+[0;32mI (311) heap_init: At 3FCE9710 len 00005724 (21 KiB): RAM[0m
+[0;32mI (316) heap_init: At 3FCF0000 len 00008000 (32 KiB): DRAM[0m
+[0;32mI (321) heap_init: At 600FE000 len 00001FE8 (7 KiB): RTCRAM[0m
+[0;32mI (327) spi_flash: detected chip: boya[0m
+[0;32mI (330) spi_flash: flash io: dio[0m
+[0;33mW (333) spi_flash: Detected size(16384k) larger than the size in the binary image header(2048k). Using the size in the binary image header.[0m
+[0;32mI (346) sleep_gpio: Configure to isolate all GPIO pins in sleep state[0m
+[0;32mI (352) sleep_gpio: Enable automatic switching of GPIO sleep configuration[0m
+[0;32mI (359) main_task: Started on CPU0[0m
+[0;32mI (379) main_task: Calling app_main()[0m
+[0;32mI (379) mc_server: Starting Minecraft 1.16.5 status server (protocol 754)[0m
+[0;32mI (409) pp: pp rom version: e7ae62f[0m
+[0;32mI (409) net80211: net80211 rom version: e7ae62f[0m
+[0;32mI (419) wifi:wifi driver task: 3fceed0c, prio:23, stack:6656, core=0[0m
+[0;32mI (429) wifi:wifi firmware version: b37c951[0m
+[0;32mI (429) wifi:wifi certification version: v7.0[0m
+[0;32mI (429) wifi:config NVS flash: enabled[0m
+[0;32mI (429) wifi:config nano formatting: disabled[0m
+[0;32mI (439) wifi:Init data frame dynamic rx buffer num: 32[0m
+[0;32mI (439) wifi:Init static rx mgmt buffer num: 5[0m
+[0;32mI (439) wifi:Init management short buffer num: 32[0m
+[0;32mI (449) wifi:Init dynamic tx buffer num: 32[0m
+[0;32mI (449) wifi:Init static tx FG buffer num: 2[0m
+[0;32mI (459) wifi:Init static rx buffer size: 1600[0m
+[0;32mI (459) wifi:Init static rx buffer num: 10[0m
+[0;32mI (459) wifi:Init dynamic rx buffer num: 32[0m
+[0;32mI (469) wifi_init: rx ba win: 6[0m
+[0;32mI (469) wifi_init: accept mbox: 6[0m
+[0;32mI (469) wifi_init: tcpip mbox: 32[0m
+[0;32mI (479) wifi_init: udp mbox: 6[0m
+[0;32mI (479) wifi_init: tcp mbox: 6[0m
+[0;32mI (479) wifi_init: tcp tx win: 5760[0m
+[0;32mI (489) wifi_init: tcp rx win: 5760[0m
+[0;32mI (489) wifi_init: tcp mss: 1440[0m
+[0;32mI (489) wifi_init: WiFi IRAM OP enabled[0m
+[0;32mI (499) wifi_init: WiFi RX IRAM OP enabled[0m
+[0;32mI (499) phy_init: phy_version 711,97bcf0a2,Aug 25 2025,19:04:10[0m
+[0;32mI (549) wifi:mode : sta (44:1b:f6:8d:bc:bc)[0m
+[0;32mI (549) wifi:enable tsf[0m
+[0;32mI (549) wifi: Connecting to SSID: Home[0m
+[0;32mI (799) wifi:new:<3,0>, old:<1,0>, ap:<255,255>, sta:<3,0>, prof:1, snd_ch_cfg:0x0[0m
+[0;32mI (799) wifi:state: init -> auth (0xb0)[0m
+[0;32mI (809) wifi:state: auth -> assoc (0x0)[0m
+[0;32mI (809) wifi:state: assoc -> run (0x10)[0m
+[0;32mI (849) wifi:connected with Home, aid = 17, channel 3, BW20, bssid = 5c:e8:83:6b:3c:dc[0m
+[0;32mI (849) wifi:security: WPA2-PSK, phy: bgn, rssi: -70, cipher(pairwise:0x3, group:0x1), pmf:0[0m
+[0;32mI (919) wifi:pm start, type: 1[0m
+
+[0;32mI (919) wifi:dp: 1, bi: 102400, li: 3, scale listen interval from 307200 us to 307200 us[0m
+[0;32mI (919) wifi:set rx beacon pti, rx_bcn_pti: 0, bcn_timeout: 25000, mt_pti: 0, mt_time: 10000[0m
+[0;32mI (949) wifi:AP's beacon interval = 102400 us, DTIM period = 1[0m
+[0;32mI (4019) esp_netif_handlers: sta ip: 192.168.1.30, mask: 255.255.255.0, gw: 192.168.1.1[0m
+[0;32mI (4019) wifi: Got IP: 192.168.1.30[0m
+[0;32mI (4019) wifi: Connected to AP: Home[0m
+[0;32mI (4019) mc_server: Minecraft status server listening on port 25565[0m
+[0;32mI (4029) main_task: Returned from app_main()[0m
+[0;32mI (10989) wifi:<ba-add>idx:0 (ifx:0, 5c:e8:83:6b:3c:dc), tid:0, ssn:5, winSize:64[0m
+[0;32mI (12119) mc_server: Client connected: 192.168.1.18[0m
+[0;32mI (12219) mc_proto: Handshake: protocol=754 next_state=2[0m
+[0;32mI (12219) mc_proto: Login attempt from username: JustSabri[0m
+[0;32mI (12219) mc_proto: sent login success[0m
+[0;32mI (12219) mc: Join Game packet size: 999 bytes[0m
+[0;32mI (12229) mc: Chunk (-2,-2) packet: 3720 bytes[0m
+[0;32mI (12239) mc: Chunk (-2,-1) packet: 3720 bytes[0m
+[0;32mI (12239) mc: Chunk (-2,0) packet: 3720 bytes[0m
+[0;32mI (12249) mc: Chunk (-2,1) packet: 3720 bytes[0m
+[0;32mI (12249) mc: Chunk (-2,2) packet: 3720 bytes[0m
+[0;32mI (12259) mc: Chunk (-1,-2) packet: 3720 bytes[0m
+[0;32mI (12259) mc: Chunk (-1,-1) packet: 3720 bytes[0m
+[0;32mI (12269) mc: Chunk (-1,0) packet: 3720 bytes[0m
+[0;32mI (12269) mc: Chunk (-1,1) packet: 3720 bytes[0m
+[0;32mI (12279) mc: Chunk (-1,2) packet: 3720 bytes[0m
+[0;32mI (12279) mc: Chunk (0,-2) packet: 3720 bytes[0m
+[0;32mI (12289) mc: Chunk (0,-1) packet: 3720 bytes[0m
+[0;32mI (12289) mc: Chunk (0,0) packet: 3720 bytes[0m
+[0;32mI (12299) mc: Chunk (0,1) packet: 3720 bytes[0m
+[0;32mI (12309) mc: Chunk (0,2) packet: 3720 bytes[0m
+[0;32mI (12319) mc: Chunk (1,-2) packet: 3720 bytes[0m
+[0;32mI (12329) mc: Chunk (1,-1) packet: 3720 bytes[0m
+[0;32mI (12329) mc: Chunk (1,0) packet: 3720 bytes[0m
+[0;32mI (12339) mc: Chunk (1,1) packet: 3720 bytes[0m
+[0;32mI (12339) mc: Chunk (1,2) packet: 3720 bytes[0m
+[0;32mI (12349) mc: Chunk (2,-2) packet: 3720 bytes[0m
+[0;32mI (12349) mc: Chunk (2,-1) packet: 3720 bytes[0m
+[0;32mI (12359) mc: Chunk (2,0) packet: 3720 bytes[0m
+[0;32mI (12369) mc: Chunk (2,1) packet: 3720 bytes[0m
+[0;32mI (12369) mc: Chunk (2,2) packet: 3720 bytes[0m
+[0;33mW (12689) mc: Unhandled play packet 0x0b len=24[0m
+[0;33mW (12689) mc: Unhandled play packet 0x00 len=1[0m
+[0;33mW (14569) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (14569) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (14599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (14639) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (14779) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (14779) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (15599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (15599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (15639) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (15689) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (16519) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (18359) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (18399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (18449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (18499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20309) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (20799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21539) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21629) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21949) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (21999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (22049) mc: Unhandled play packet 0x14 len=9[0m
+[0;32mI (22229) mc_ka: Sent keepalive ID 1[0m
+[0;33mW (22289) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (22759) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (22799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (22849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (22899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23069) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23069) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23069) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23099) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23149) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23479) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23949) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (23999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (24729) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25019) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25019) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25019) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25429) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25559) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25609) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (25749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (26549) mc: Unhandled play packet 0x14 len=9[0m
+[0;32mI (32229) mc_ka: Sent keepalive ID 2[0m
+[0;33mW (32249) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (41349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (41449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (41499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (41549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42099) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42149) mc: Unhandled play packet 0x14 len=9[0m
+[0;32mI (42229) mc_ka: Sent keepalive ID 3[0m
+[0;33mW (42259) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (42549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42729) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (42799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43139) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43159) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43209) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43309) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43359) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43809) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (43859) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (45609) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (46059) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (46319) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (49859) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (50799) mc: Unhandled play packet 0x1c len=6[0m
+[0;32mI (52229) mc_ka: Sent keepalive ID 4[0m
+[0;33mW (52249) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (57849) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (58359) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (58359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58399) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58449) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58609) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58609) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58609) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58699) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58749) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58799) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (58899) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59019) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59019) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59049) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59109) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59149) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (59159) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59209) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59249) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59349) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59399) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59449) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (59459) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59509) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59549) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59599) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59709) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (59749) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (60549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60559) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60609) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60859) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60859) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (60909) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (61159) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (61209) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (61209) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61209) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61259) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61309) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61409) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61459) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61509) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61559) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61609) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61659) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61709) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61759) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61809) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61859) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61979) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (61989) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62009) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62059) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62189) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (62189) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62189) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62209) mc: Unhandled play packet 0x2c len=1[0m
+[0;32mI (62229) mc_ka: Sent keepalive ID 5[0m
+[0;33mW (62259) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62259) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (62309) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62409) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (62409) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62459) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62509) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62559) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62609) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62659) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62709) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62759) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62809) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (62859) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63009) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63009) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63009) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63059) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63109) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63159) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (63159) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63319) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63319) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63319) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63359) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63409) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63459) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (63459) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63509) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63539) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63619) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63659) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63709) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63839) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63839) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63859) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63909) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63959) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (63989) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (64059) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (65649) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (65649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65689) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (65739) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (65789) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (65839) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (65889) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (65949) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (65989) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66039) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66089) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66289) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66289) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66309) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66349) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66399) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (66399) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66629) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66629) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66629) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66629) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66639) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66639) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66639) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66699) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (66699) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66749) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66799) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66899) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66949) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (66949) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (66949) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66949) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (66999) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (66999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67049) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67099) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67099) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67149) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67149) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67199) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67249) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67349) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67399) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (67439) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67499) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67539) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67599) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67719) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67819) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67829) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67849) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (67849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67889) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67949) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (67999) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68049) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68099) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68149) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (68149) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68199) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68329) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68329) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68349) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68399) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68539) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68549) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68549) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68599) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68649) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68709) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (68849) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68859) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (68899) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (68949) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68949) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (68999) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (68999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69159) mc: Unhandled play packet 0x1b len=10[0m
+[0;33mW (69159) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69159) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69159) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69159) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69199) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69249) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69299) mc: Unhandled play packet 0x2c len=1[0m
+[0;33mW (69299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (69649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (71029) mc: Unhandled play packet 0x1c len=6[0m
+[0;32mI (72229) mc_ka: Sent keepalive ID 6[0m
+[0;33mW (72249) mc: Unhandled play packet 0x10 len=8[0m
+[0;32mI (82229) mc_ka: Sent keepalive ID 7[0m
+[0;33mW (82309) mc: Unhandled play packet 0x10 len=8[0m
+[0;32mI (92229) mc_ka: Sent keepalive ID 8[0m
+[0;33mW (92259) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (96399) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (96899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (96909) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (97109) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98139) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98239) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98339) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98389) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98539) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98589) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (98639) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99149) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99259) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99259) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (99899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100179) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100629) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (100999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101099) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101149) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101319) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101609) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101609) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (101999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102109) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102109) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102149) mc: Unhandled play packet 0x14 len=9[0m
+[0;32mI (102229) mc_ka: Sent keepalive ID 9[0m
+[0;33mW (102229) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102249) mc: Unhandled play packet 0x10 len=8[0m
+[0;33mW (102359) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (102999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103109) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103109) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103159) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103559) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103559) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103969) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103969) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (103999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104099) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104149) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104199) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104249) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104399) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104449) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104499) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104549) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104599) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104649) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104699) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (104999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105299) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105309) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105349) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105709) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105749) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105799) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105849) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105899) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (105999) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (106049) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (106459) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (109309) mc: Unhandled play packet 0x1c len=6[0m
+[0;33mW (109859) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (109909) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (110009) mc: Unhandled play packet 0x14 len=9[0m
+[0;33mW (110019) mc: Unhandled play packet 0x14 len=9[0m
+[0;32mI (110829) mc: Client disconnected[0m

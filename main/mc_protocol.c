@@ -2,6 +2,7 @@
 #include "varint.h"
 #include "config.h"
 
+
 static const char *TAG = "mc_proto";
 
 // Minecraft "next state" values sent in the Handshake packet.
@@ -304,6 +305,7 @@ void mc_keep_alive_task (void* arg) {
     }
 }
 
+
 static int play_update_view_position(int sock, struct ClientInformation* user, int chunkX, int chunkZ){
     user->chunkX = chunkX;
     user->chunkZ = chunkZ;
@@ -318,10 +320,7 @@ static int play_update_view_position(int sock, struct ClientInformation* user, i
     }
     return 0;
 }
-
-// claude test
-#include "nbt_data.h"
-
+//claude test
 // Builds one flat chunk section (y=0 to y=15):
 // y=0: bedrock (block state 33)
 // y=1-2: dirt (block state 10)
@@ -383,6 +382,7 @@ static int build_flat_section(uint8_t *out) {
 
     return idx;
 }
+
 
 static int send_chunk(int sock, int32_t chunk_x, int32_t chunk_z) {
     // Chunk packet can be large — allocate on heap not stack
@@ -482,9 +482,42 @@ static void send_spawn_chunks(int sock) {
 }
 
 //end claude test
+static int play_read_player_rotation(int sock, struct ClientInformation* user, uint8_t* payload) {
+    int idx = 0;
+    memcpy(&user->yaw, payload+idx, sizeof(user->yaw)); idx += sizeof(user->yaw);
+    memcpy(&user->pitch, payload+idx, sizeof(user->pitch)); idx += sizeof(user->pitch);
+    user->onGround = (bool)payload[idx];
+    ESP_LOGI("mc_play", "read player rotation packet");
+    return 0;
+}
 
+static int play_hand_animation(int sock, struct ClientInformation* user, uint8_t* payload, int payload_len) {
+    int ok = true;
+    size_t offset = 0;
+    user->hand = mc_read_varint_buf(payload, (size_t)payload_len, &offset, &ok);
+    ESP_LOGI("mc_play", "reading hand animation");
+    if(!ok){
+        ESP_LOGI("mc_play", "incomplete varint for 0x2c");
+        return 1;
+    }
+    return 0;
+}
 
-void mc_play_loop(int sock) {
+static int play_player_digging(int sock, struct ClientInformation* user, uint8_t* payload, int payload_len) {
+    int ok;
+    size_t offset;
+    int idx = 0;
+    idx += (mc_read_varint_buf(payload, (size_t)payload_len, &offset, &ok));
+    memcpy(&user->diggingPosition, payload+idx, sizeof(user->diggingPosition)); idx += sizeof(user->diggingPosition);
+    payload[idx] = user->diggingFace;
+    ESP_LOGI("mc_play", "reading block digging");
+    if(!ok){
+        return 1;
+    }
+    return 0;
+}
+
+void mc_play_loop(int sock, struct ClientInformation* user) {
     uint8_t payload[512];
     int payload_len;
 
@@ -495,9 +528,26 @@ void mc_play_loop(int sock) {
             break;
         }
         switch (id) {
-            case 0x1F: break; // keepalive echo — discard
+            case 0x1: 
+                ESP_LOGI("mc_play", "Received Keepalive from client");
+                break; // keepalive echo — discard
             case 0x12: break; // player position — discard for now
             case 0x13: break; // player position and look — discard for now
+            case  PlayerRotation:
+                if(play_read_player_rotation(sock, user, payload)){
+                    ESP_LOGI("mc_play", "read player rotation failed");
+                }
+                break;
+            case PlayerDigging:
+            if(play_player_digging(sock, user, payload, payload_len)){
+                    ESP_LOGI("mc_play", "read player digging failed");
+                }
+                break;
+            case  HandAnimation:
+                if(play_hand_animation(sock, user, payload, payload_len)){
+                    ESP_LOGI("mc_play", "read hand animation failed");
+                }
+                break;
             case 0x05: break; // client settings — discard for now
             case 0x04: break; // client status — discard for now
             default:
@@ -506,6 +556,7 @@ void mc_play_loop(int sock) {
         }
     }
 }
+    
 
 static void handle_login_state(int sock) {
     uint8_t payload[MC_MAX_PACKET_SIZE];
@@ -533,6 +584,7 @@ static void handle_login_state(int sock) {
     if (play_join_game(sock, user)){
         ESP_LOGI(TAG, "Failed to send join game packet");
     }
+
     // start keepalive task cycle
     TaskHandle_t ka_handle = NULL;
     xTaskCreate(mc_keep_alive_task, "mc_ka", 2048, (void*)(intptr_t)sock, 5, &ka_handle);
@@ -547,12 +599,13 @@ static void handle_login_state(int sock) {
 
     send_spawn_chunks(sock);
 
-    mc_play_loop(sock); // blocks until client disconnects
+    mc_play_loop(sock, user);
 
     // Clean up keepalive task if play loop exits
     if (ka_handle != NULL) {
         vTaskDelete(ka_handle);
     }
+
 }
 
 // --------------------------------------------------------------------

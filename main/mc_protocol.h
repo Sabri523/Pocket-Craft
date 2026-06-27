@@ -36,11 +36,28 @@ struct ClientInformation {
     double z;
     float yaw;
     float pitch;
+    bool onGround;
     uint8_t flags;
     int teleportID;
+    
+    //player hand animation
+    uint32_t hand;
 
+    //player digging
+    int diggingStatus;
+    int64_t diggingPosition;
+    uint8_t diggingFace;
+    
+
+    //player chunk
     int chunkX;
     int chunkZ;
+};
+
+enum ClientToServerPacketHeaders{
+    PlayerRotation = 0x14,
+    PlayerDigging = 0x1B,
+    HandAnimation = 0x2C,
 };
 // Handles a single client connection end-to-end (handshake, status, ping,
 // and a graceful kick if they attempt to log in). Blocks until the client
