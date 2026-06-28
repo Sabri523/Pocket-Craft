@@ -514,7 +514,7 @@ static int play_player_digging(int sock, struct ClientInformation* user, uint8_t
 }
 
 static int play_player_position(int sock, struct ClientInformation* user, uint8_t* payload){
-    idx = 0;
+    int idx = 0;
     memcpy(&user->x, payload+idx, sizeof(user->x)); idx += sizeof(user->x);
     memcpy(&user->feetY, payload+idx, sizeof(user->feetY)); idx += sizeof(user->feetY);
     memcpy(&user->z, payload+idx, sizeof(user->z)); idx += sizeof(user->z);
@@ -524,7 +524,7 @@ static int play_player_position(int sock, struct ClientInformation* user, uint8_
 }
 
 static int play_player_position_and_rotation(int sock, struct ClientInformation* user, uint8_t* payload) {
-    idx = 0;
+    int idx = 0;
     memcpy(&user->x, payload+idx, sizeof(user->x)); idx += sizeof(user->x);
     memcpy(&user->feetY, payload+idx, sizeof(user->feetY)); idx += sizeof(user->feetY);
     memcpy(&user->z, payload+idx, sizeof(user->z)); idx += sizeof(user->z);
@@ -534,6 +534,33 @@ static int play_player_position_and_rotation(int sock, struct ClientInformation*
     ESP_LOGI("mc_play", "reading player position and rotation");
     return 0;
 }
+
+static int play_set_difficulty(int sock, struct ClientInformation* user, uint8_t* payload) {
+    
+    int idx = 0;
+    
+    user->setDifficulty = payload[idx]; idx += 1;
+
+    EPS_LOGI("mc_play", "reading set difficulty packet");
+
+    return 0;
+
+}
+
+static int play_player_movement(int sock, struct ClientInformation* user, uint8_t* payload) {
+    int idx = 0;
+    user->onGround = payload[idx]? true : false;
+    ESP_LOGI("mc_play", "reading player movement");
+    return 0;
+}
+
+static int play_held_item_change(int sock, struct ClientInformation* user, uint8_t* payload) {
+    int idx = 0;
+    memcpy(&user->slot, payload, sizeof(user->slot)); idx += sizeof(user->slot);
+    ESP_LOGI("mc_play","reading held item change packet");
+    return 0;
+}
+
 void mc_play_loop(int sock, struct ClientInformation* user) {
     uint8_t payload[512];
     int payload_len;
@@ -545,12 +572,17 @@ void mc_play_loop(int sock, struct ClientInformation* user) {
             break;
     
         switch (id) {
+            case SetDifficulty:
+                if(play_set_difficulty(sock, user, payload)){
+                    ESP_LOGI("mc_play", "reading player position");
+                    break;
+                }
             case KeepAlive: 
                 ESP_LOGI("mc_play", "Received Keepalive from client");
                 break; 
             case PlayerPosition: 
                 if(play_player_position(sock, user, payload)){
-                    ESP_LOGI("mc_play", "reading player position")
+                    ESP_LOGI("mc_play", "reading player position failed");
                 }
                 break; 
             case PlayerPositionAndRotation: 
@@ -563,9 +595,20 @@ void mc_play_loop(int sock, struct ClientInformation* user) {
                     ESP_LOGI("mc_play", "read player rotation failed");
                 }
                 break;
+            case PlayerMovement:
+                if(play_player_movement(sock, user, payload)){
+                    ESP_LOGI("mc_play", "reading player movement");
+                    
+                }
+                break;
             case PlayerDigging:
-            if(play_player_digging(sock, user, payload, payload_len)){
+                if(play_player_digging(sock, user, payload, payload_len)){
                     ESP_LOGI("mc_play", "read player digging failed");
+                }
+                break;
+            case HeldItemChange:
+                if(play_held_item_change(sock, user, payload)){
+                    ESP_LOGI("mc_play", "read held item change failed");
                 }
                 break;
             case  HandAnimation:

@@ -20,6 +20,7 @@ struct ClientInformation {
     bool isHardcore;
     uint8_t gamemode;
     int8_t previousGamemode;
+    uint8_t setDifficulty;
     char worldName[16];
     int64_t hashedSeed;
     uint32_t maxPlayers;
@@ -53,14 +54,20 @@ struct ClientInformation {
     //player chunk
     int chunkX;
     int chunkZ;
+
+    //inventory
+    uint16_t slot;
 };
 
 enum ClientToServerPacketHeaders{
+    SetDifficulty = 0x02,
     KeepAlive = 0x10,
     PlayerPosition = 0x12,
     PlayerPositionAndRotation = 0x13,
     PlayerRotation = 0x14,
+    PlayerMovement = 0x15,
     PlayerDigging = 0x1B,
+    HeldItemChange = 0x25,
     HandAnimation = 0x2C
 };
 // Handles a single client connection end-to-end (handshake, status, ping,
