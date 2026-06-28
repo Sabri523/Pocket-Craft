@@ -305,7 +305,6 @@ void mc_keep_alive_task (void* arg) {
     }
 }
 
-
 static int play_update_view_position(int sock, struct ClientInformation* user, int chunkX, int chunkZ){
     user->chunkX = chunkX;
     user->chunkZ = chunkZ;
@@ -382,7 +381,6 @@ static int build_flat_section(uint8_t *out) {
 
     return idx;
 }
-
 
 static int send_chunk(int sock, int32_t chunk_x, int32_t chunk_z) {
     // Chunk packet can be large — allocate on heap not stack
@@ -471,7 +469,6 @@ static int send_chunk(int sock, int32_t chunk_x, int32_t chunk_z) {
     free(body);
     return result;
 }
-
 // Send a grid of chunks around spawn
 static void send_spawn_chunks(int sock) {
     for (int x = -2; x <= 2; x++) {
@@ -480,7 +477,6 @@ static void send_spawn_chunks(int sock) {
         }
     }
 }
-
 //end claude test
 static int play_read_player_rotation(int sock, struct ClientInformation* user, uint8_t* payload) {
     int idx = 0;
@@ -517,6 +513,27 @@ static int play_player_digging(int sock, struct ClientInformation* user, uint8_t
     return 0;
 }
 
+static int play_player_position(int sock, struct ClientInformation* user, uint8_t* payload){
+    idx = 0;
+    memcpy(&user->x, payload+idx, sizeof(user->x)); idx += sizeof(user->x);
+    memcpy(&user->feetY, payload+idx, sizeof(user->feetY)); idx += sizeof(user->feetY);
+    memcpy(&user->z, payload+idx, sizeof(user->z)); idx += sizeof(user->z);
+    user->onGround = payload[idx]? true : false;
+    ESP_LOGI("mc_play", "reading player position");
+    return 0;
+}
+
+static int play_player_position_and_rotation(int sock, struct ClientInformation* user, uint8_t* payload) {
+    idx = 0;
+    memcpy(&user->x, payload+idx, sizeof(user->x)); idx += sizeof(user->x);
+    memcpy(&user->feetY, payload+idx, sizeof(user->feetY)); idx += sizeof(user->feetY);
+    memcpy(&user->z, payload+idx, sizeof(user->z)); idx += sizeof(user->z);
+    memcpy(&user->yaw, payload+idx, sizeof(user->yaw)); idx += sizeof(user->yaw);
+    memcpy(&user->pitch, payload+idx, sizeof(user->pitch)); idx += sizeof(user->pitch);
+    user->onGround = payload[idx]? true : false;
+    ESP_LOGI("mc_play", "reading player position and rotation");
+    return 0;
+}
 void mc_play_loop(int sock, struct ClientInformation* user) {
     uint8_t payload[512];
     int payload_len;
@@ -526,13 +543,21 @@ void mc_play_loop(int sock, struct ClientInformation* user) {
         if (id < 0) {
             ESP_LOGI("mc", "Client disconnected");
             break;
-        }
+    
         switch (id) {
-            case 0x1: 
+            case KeepAlive: 
                 ESP_LOGI("mc_play", "Received Keepalive from client");
-                break; // keepalive echo — discard
-            case 0x12: break; // player position — discard for now
-            case 0x13: break; // player position and look — discard for now
+                break; 
+            case PlayerPosition: 
+                if(play_player_position(sock, user, payload)){
+                    ESP_LOGI("mc_play", "reading player position")
+                }
+                break; 
+            case PlayerPositionAndRotation: 
+                if(play PlayerPositionAndRotation(sock, user, payload)){
+                    ESP_LOGI("mc_play", "reading player position and rotation failed");
+                }                
+                break; 
             case  PlayerRotation:
                 if(play_read_player_rotation(sock, user, payload)){
                     ESP_LOGI("mc_play", "read player rotation failed");

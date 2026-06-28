@@ -33,6 +33,7 @@ struct ClientInformation {
 
     double x;
     double y;
+    double feetY;
     double z;
     float yaw;
     float pitch;
@@ -55,9 +56,12 @@ struct ClientInformation {
 };
 
 enum ClientToServerPacketHeaders{
+    KeepAlive = 0x10,
+    PlayerPosition = 0x12,
+    PlayerPositionAndRotation = 0x13,
     PlayerRotation = 0x14,
     PlayerDigging = 0x1B,
-    HandAnimation = 0x2C,
+    HandAnimation = 0x2C
 };
 // Handles a single client connection end-to-end (handshake, status, ping,
 // and a graceful kick if they attempt to log in). Blocks until the client
